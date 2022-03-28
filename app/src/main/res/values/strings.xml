@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TV series</string>
+    <string name="listing_all">All TV shows</string>
 </resources>
