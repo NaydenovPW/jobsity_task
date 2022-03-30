@@ -2,6 +2,7 @@ package pw.naydenov.jobsity_task
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
 import pw.naydenov.jobsity_task.core.router.Router
 import javax.inject.Inject
 
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         CustomApplication.instance().daggerCoreComponent.inject(this)
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_main)
         initViews()
     }
@@ -20,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         setFragmentListener()
-        router.showListing()
+        router.tvShowsListing()
     }
 
     private fun initViews() {

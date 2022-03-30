@@ -18,6 +18,7 @@ class CustomApplication: Application() {
     companion object {
         private lateinit var applicationInstance: CustomApplication
         fun instance() = applicationInstance
+        const val API_URL = "https://api.tvmaze.com"
     }
 
 }

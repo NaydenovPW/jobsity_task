@@ -2,7 +2,6 @@ package pw.naydenov.jobsity_task.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import pw.naydenov.jobsity_task.features.series_listing.SeriesListingViewModel
 import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Singleton

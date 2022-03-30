@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TV series</string>
-    <string name="listing_all">All TV shows</string>
+    <!-- TV shows listing screen -->
+    <string name="listing_search_hint">Search TV shows</string>
 </resources>

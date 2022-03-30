@@ -5,7 +5,8 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import pw.naydenov.jobsity_task.features.series_listing.SeriesListingViewModel
+import pw.naydenov.jobsity_task.features.tv_shows_listing.TvShowsListingViewModel
+import javax.inject.Singleton
 
 @Module
 abstract class ViewModelModule {
@@ -14,6 +15,7 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(SeriesListingViewModel::class)
-    abstract fun seriesListingViewModel(viewModel: SeriesListingViewModel): ViewModel
+    @Singleton
+    @ViewModelKey(TvShowsListingViewModel::class)
+    abstract fun tvShowsListingViewModel(viewModel: TvShowsListingViewModel): ViewModel
 }
