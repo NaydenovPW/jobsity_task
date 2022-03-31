@@ -1,1 +1,2 @@
 # jobsity_task
+This android application has been made as test task for Jobsity. Application allows to see list of tv shows provided by TV Maze API (https://api.tvmaze.com/), search tv shows, see tv show info with list of episodes, see episode info. It has been made in a short time so expect bugs and glitches and use it at your own risk. Just clone repo and build apk or download apk from dist folder.
