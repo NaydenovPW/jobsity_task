@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
+import pw.naydenov.jobsity_task.features.episode_info.EpisodeInfoViewModel
 import pw.naydenov.jobsity_task.features.tv_show_info.TvShowInfoViewModel
 import pw.naydenov.jobsity_task.features.tv_shows_listing.TvShowsListingViewModel
 import javax.inject.Singleton
@@ -25,4 +26,10 @@ abstract class ViewModelModule {
     @Singleton
     @ViewModelKey(TvShowInfoViewModel::class)
     abstract fun tvShowInfoViewModel(viewModel: TvShowInfoViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @Singleton
+    @ViewModelKey(EpisodeInfoViewModel::class)
+    abstract fun episodeInfoViewModel(viewModel: EpisodeInfoViewModel): ViewModel
 }

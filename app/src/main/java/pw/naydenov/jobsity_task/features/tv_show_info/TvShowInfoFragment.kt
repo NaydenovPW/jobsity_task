@@ -2,9 +2,11 @@ package pw.naydenov.jobsity_task.features.tv_show_info
 
 import android.os.Bundle
 import android.text.Html
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
@@ -57,6 +59,7 @@ class TvShowInfoFragment : Fragment() {
         findViews()
         fillViews()
         subscribeToViewModel()
+        Log.e("TAG", "onStar() CALLED ")
         viewModel.loadEpisodes(tvShow.id)
     }
 
@@ -98,13 +101,15 @@ class TvShowInfoFragment : Fragment() {
     }
 
     private fun showEpisodes(seasons: List<Season>) {
+        Log.e("TAG", "showEpisodes() CALLED")
         list?.let {
             for (season in seasons) {
+                Log.e("TAG", "Season [${season.number}]")
                 val seasonView = layoutInflater.inflate(R.layout.view_episode, null, false)
 
-                if (seasonView.layoutParams is ViewGroup.MarginLayoutParams) {
+                if (seasonView.layoutParams is FrameLayout.LayoutParams) {
                     val p: ViewGroup.MarginLayoutParams =
-                        seasonView.layoutParams as (ViewGroup.MarginLayoutParams)
+                        seasonView.layoutParams as (FrameLayout.LayoutParams)
                     p.setMargins(16, 32, 16, 0)
                     seasonView.requestLayout()
                 }

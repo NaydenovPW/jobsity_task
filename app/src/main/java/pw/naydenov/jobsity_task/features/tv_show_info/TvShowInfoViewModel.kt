@@ -40,6 +40,7 @@ class TvShowInfoViewModel @Inject constructor(
     }
 
     fun episodesBySeasons(episodes: List<Episode>) {
+        Log.e("TAG", "episodesBySeasons() CALLED")
         val seasonsMap = HashMap<Int, ArrayList<Episode>>()
         for (episode in episodes) {
             if (seasonsMap.containsKey(episode.season)) {
@@ -58,7 +59,7 @@ class TvShowInfoViewModel @Inject constructor(
     }
 
     fun onEpisodeClick(episode: Episode) {
-        Log.e("TAG", "onEpisodeLick: [${episode.id}]")
+        router.episodeInfo(episode)
     }
 
 }

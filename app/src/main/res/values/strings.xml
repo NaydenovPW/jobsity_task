@@ -8,4 +8,8 @@
     <string name="air_time_title">Air time: %1$s</string>
     <string name="genres_title">Genres:</string>
 
+    <!-- Episode info screen -->
+    <string name="episode_number">Episode #%1$d</string>
+    <string name="season_number">Season #%1$d</string>
+
 </resources>
