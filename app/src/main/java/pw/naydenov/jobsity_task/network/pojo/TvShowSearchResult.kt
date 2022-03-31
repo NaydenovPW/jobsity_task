@@ -1,8 +1,8 @@
-package pw.naydenov.jobsity_task.features.tv_shows_listing
+package pw.naydenov.jobsity_task.network.pojo
 
 import com.google.gson.annotations.SerializedName
 
-class TvShowSearchResult(
+data class TvShowSearchResult(
     @SerializedName("score")
     var score: Float,
     @SerializedName("show")

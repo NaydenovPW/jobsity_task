@@ -15,13 +15,11 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.*
 import android.widget.EditText
-import androidx.appcompat.widget.AppCompatEditText
-import io.reactivex.Emitter
 import io.reactivex.Observable
-import io.reactivex.ObservableEmitter
-import io.reactivex.ObservableOnSubscribe
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
+import pw.naydenov.jobsity_task.network.pojo.TvShow
+import pw.naydenov.jobsity_task.network.pojo.TvShows
 import java.util.concurrent.TimeUnit
 
 class TvShowsListingFragment : Fragment() {
@@ -124,8 +122,8 @@ class TvShowsListingFragment : Fragment() {
             recycler?.adapter = TvShowsListingAdapter(
                 tvShows.tvShows,
                 object : TvShowsListingAdapter.TvShowClickListener {
-                    override fun onItemClick(id: Int) {
-                        viewModel.onTvShowClicked(id)
+                    override fun onItemClick(tvShow: TvShow) {
+                        viewModel.onTvShowClicked(tvShow)
                     }
                 })
         } else {

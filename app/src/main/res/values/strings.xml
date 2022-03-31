@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">TV series</string>
+
     <!-- TV shows listing screen -->
     <string name="listing_search_hint">Search TV shows</string>
+
+    <!-- TV show info screen -->
+    <string name="air_time_title">Air time: %1$s</string>
+    <string name="genres_title">Genres:</string>
+
 </resources>

@@ -4,6 +4,15 @@
     <style name="text_default_black">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="text_default_black.bold" parent="text_default_black">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text_header_black">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:textStyle">bold</item>
     </style>
 

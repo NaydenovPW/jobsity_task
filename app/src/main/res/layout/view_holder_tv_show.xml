@@ -6,8 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background_clickable"
     android:clickable="true"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
     android:padding="8dp">
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -23,7 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        style="@style/text_default_black"
+        style="@style/text_default_black.bold"
         android:id="@+id/view_holder_tv_show_name"
         android:layout_marginTop="8dp"
         android:layout_width="wrap_content"

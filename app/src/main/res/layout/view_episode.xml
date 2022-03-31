@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background_clickable"
+    android:layout_width="match_parent"
+    android:layout_marginHorizontal="16dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        style="@style/text_default_black"
+        android:id="@+id/view_episode_start_text"
+        android:layout_width="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        style="@style/text_default_black"
+        android:layout_gravity="end"
+        android:id="@+id/view_episode_end_text"
+        android:layout_width="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_height="wrap_content"/>
+
+</FrameLayout>

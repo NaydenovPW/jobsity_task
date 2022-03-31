@@ -9,6 +9,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import pw.naydenov.jobsity_task.R
+import pw.naydenov.jobsity_task.network.pojo.TvShow
 
 class TvShowsListingAdapter(var tvShows: List<TvShow>, val listener: TvShowClickListener) :
     RecyclerView.Adapter<TvShowsListingAdapter.TvShowViewHolder>() {
@@ -21,8 +22,7 @@ class TvShowsListingAdapter(var tvShows: List<TvShow>, val listener: TvShowClick
     }
 
     override fun onBindViewHolder(viewholder: TvShowViewHolder, i: Int) {
-        viewholder.setContent(tvShows[i])
-        viewholder.itemView.setOnClickListener { listener.onItemClick(tvShows[i].id) }
+        viewholder.setContent(tvShows[i], listener)
     }
 
     override fun getItemCount(): Int {
@@ -33,7 +33,7 @@ class TvShowsListingAdapter(var tvShows: List<TvShow>, val listener: TvShowClick
         var name: AppCompatTextView = itemView.findViewById(R.id.view_holder_tv_show_name)
         var image: AppCompatImageView = itemView.findViewById(R.id.view_holder_tv_show_image)
 
-        fun setContent(tvShow: TvShow) {
+        fun setContent(tvShow: TvShow, listener: TvShowClickListener) {
             name.text = tvShow.name
             tvShow.image?.let {
                 Glide
@@ -42,25 +42,24 @@ class TvShowsListingAdapter(var tvShows: List<TvShow>, val listener: TvShowClick
                     .error(R.drawable.no_image)
                     .into(image)
             }
+            itemView.setOnClickListener { listener.onItemClick(tvShow) }
         }
     }
 
     fun addItems(moreShows: List<TvShow>, isAppend: Boolean) {
         if (isAppend) {
-            Log.e("TAG", "addItems: APPEND")
             val oldSize = tvShows.size
             (tvShows as ArrayList).addAll(moreShows)
             val newSize = tvShows.size
             notifyItemRangeChanged(oldSize, newSize)
         } else {
-            Log.e("TAG", "addItems: REPLACE [${moreShows.size}]")
             tvShows = moreShows
             notifyDataSetChanged()
         }
     }
 
     interface TvShowClickListener {
-        fun onItemClick(id: Int)
+        fun onItemClick(tvShow: TvShow)
     }
 
 }

@@ -1,4 +1,4 @@
-package pw.naydenov.jobsity_task.features.tv_shows_listing
+package pw.naydenov.jobsity_task.network.pojo
 
 import com.google.gson.annotations.SerializedName
 
@@ -7,5 +7,4 @@ data class TvShowImage(
     var medium: String,
     @SerializedName("original")
     var original: String
-) {
-}
+)

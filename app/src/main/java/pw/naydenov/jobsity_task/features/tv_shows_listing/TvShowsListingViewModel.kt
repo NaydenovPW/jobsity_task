@@ -3,6 +3,9 @@ package pw.naydenov.jobsity_task.features.tv_shows_listing
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import pw.naydenov.jobsity_task.network.pojo.TvShow
+import pw.naydenov.jobsity_task.network.pojo.TvShowSearchResult
+import pw.naydenov.jobsity_task.network.pojo.TvShows
 import pw.naydenov.jobsity_task.core.resource_manager.ResourceManager
 import pw.naydenov.jobsity_task.core.router.Router
 import pw.naydenov.jobsity_task.network.NetworkApiInterface
@@ -12,7 +15,6 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class TvShowsListingViewModel @Inject constructor(
-    private val res: ResourceManager,
     private val network: NetworkApiInterface,
     private val router: Router
 ) : ViewModel() {
@@ -51,8 +53,8 @@ class TvShowsListingViewModel @Inject constructor(
         })
     }
 
-    fun onTvShowClicked(id: Int) {
-
+    fun onTvShowClicked(tvShow: TvShow) {
+        router.tvShowInfo(tvShow)
     }
 
     fun onSearchInput(request: String) {
